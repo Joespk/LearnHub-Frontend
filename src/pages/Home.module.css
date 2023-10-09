@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.feedContainer {
+  display: grid;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 32px;
+  margin: 36px 128px;
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: auto;
+  background-color: #c8c8c8;
+  padding: 10px 8px;
+  border-radius: 6px;
+  gap: 5px;
+}
