@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   const { contents } = useContents()
-  const { isLoggedIn, logout } = useAuth()
+  const { isLoggedIn } = useAuth()
   return (
     <div className={classes.container}>
       <Tap />
@@ -19,9 +19,7 @@ function Home() {
         </>
       ) : (
         <>
-          <Link to="/" className={classes.cretecontentLogout}>
-            Create new content
-          </Link>
+          <Link to="/" className={classes.cretecontentLogout}></Link>
         </>
       )}
       <div className={classes.feedContainer}>

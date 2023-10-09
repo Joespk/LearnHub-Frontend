@@ -9,9 +9,11 @@ const Content = ({ content }: IContentprops) => {
   return (
     <div className={classes.content}>
       <img className={classes.thumbnail} src={content.thumbnailUrl} />
-      <p> videoTitle:{content.videoTitle}</p>
-      <p> videoUrl:{content.videoUrl}</p>
-      <p> comment: {content.comment}</p>
+      <p> {content.videoTitle}</p>
+      <p>{content.creatorName}</p>
+      <p> {content.comment}</p>
+      <p>{content.postedBy.name}</p>
+      <p>{content.rating}</p>
     </div>
   )
 }
