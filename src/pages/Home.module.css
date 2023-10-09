@@ -24,3 +24,15 @@
   border-radius: 6px;
   gap: 5px;
 }
+
+.cretecontentLogin {
+  display: inline;
+  background-color: orange;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+}
+
+.cretecontentLogout {
+  display: none;
+}
