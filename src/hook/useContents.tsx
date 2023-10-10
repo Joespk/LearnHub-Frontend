@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
-import { ContentDTO, ContentsDTO } from '../types/dto'
+import { ContentDTO, ContentsDTO, CreateContentDTO } from '../types/dto'
 import axios from 'axios'
 
-const UseContents = () => {
+const useContents = () => {
   const [contents, setContents] = useState<ContentsDTO | null>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,7 +19,30 @@ const UseContents = () => {
     fetchData()
   }, [])
 
-  return { contents }
+  const createContent = async (NewvideoUrl: string, Newcomment: string, Newrating: number) => {
+    const token = localStorage.getItem('token')
+    const newContentBody: CreateContentDTO = {
+      videoUrl: NewvideoUrl,
+      comment: Newcomment,
+      rating: Newrating,
+    }
+    console.log(newContentBody)
+
+    setIsSubmitting(true)
+    try {
+      const res = await axios.post<ContentDTO>('https://api.learnhub.thanayut.in.th/content', newContentBody, {
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      })
+
+      console.log(res.data)
+    } catch (err) {
+      throw err
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return { contents, isLoading, isSubmitting, createContent }
 }
 
-export default UseContents
+export default useContents

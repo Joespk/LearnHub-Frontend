@@ -13,7 +13,7 @@ function Home() {
       <Tap />
       {isLoggedIn ? (
         <>
-          <Link to="/" className={classes.cretecontentLogin}>
+          <Link to="/CreateContent" className={classes.cretecontentLogin}>
             Create new content
           </Link>
         </>
