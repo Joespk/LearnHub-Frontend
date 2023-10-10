@@ -24,3 +24,17 @@
   border-radius: 6px;
   gap: 5px;
 }
+
+.cretecontentLogin {
+  display: inline;
+  background-color: orange;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
+
+.cretecontentLogout {
+  display: none;
+}
