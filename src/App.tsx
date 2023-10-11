@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import CreateContent from './pages/CreateContent'
 import ContentDetail from './pages/ContentDetail'
 import EditDetail from './pages/EditDetail'
+import Register from './pages/Register'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/CreateContent" element={<CreateContent />} />
         <Route path="/content/:id" element={<ContentDetail />} />
         <Route path="/edit/:id" element={<EditDetail />} />
+        <Route path="/Register" element={<Register />} />
       </Routes>
     </div>
   )
