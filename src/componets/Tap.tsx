@@ -3,7 +3,7 @@ import classes from './Tap.module.css'
 const Tap = () => {
   return (
     <div className={classes.tap}>
-      <p>LearnHub</p>
+      <h1 className={classes.title}>LearnHub</h1>
     </div>
   )
 }
