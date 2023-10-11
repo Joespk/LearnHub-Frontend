@@ -2,7 +2,21 @@ import { FormEvent, useState } from 'react'
 import useContents from '../hook/useContents'
 import classes from './Home.module.css'
 import { useNavigate } from 'react-router'
+import { Rating, Typography, styled } from '@mui/material'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
+//icon rating
+const StyledRating = styled(Rating)({
+  '& .MuiRating-iconFilled': {
+    color: '#ff6d75',
+  },
+  '& .MuiRating-iconHover': {
+    color: '#ff3d47',
+  },
+})
+
+//Create Feature
 const CreateContent = () => {
   const { isSubmitting, createContent } = useContents()
   const navigate = useNavigate()
@@ -35,7 +49,16 @@ const CreateContent = () => {
         <label>Comment</label>
         <input type="text" value={Newcomment} onChange={(e) => setNewcomment(e.target.value)} required />
         <label>Rating</label>
-        <input type="number" value={Newrating} onChange={(e) => setNewrating(e.target.valueAsNumber)} required />
+
+        <Typography component="legend"></Typography>
+        <StyledRating
+          name="simple-controlled"
+          value={Newrating}
+          onChange={(e, rating) => setNewrating(rating !== null ? rating : 0)}
+          icon={<FavoriteIcon fontSize="inherit" />}
+          emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+        />
+
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
