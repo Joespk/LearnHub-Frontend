@@ -17,7 +17,7 @@ const useRegister = () => {
       })
       console.log(res.data)
     } catch (err) {
-      throw err
+      alert('Username already exists')
     } finally {
       setIsSubmitting(false)
     }
