@@ -1,16 +1,27 @@
 import { useAuth } from '../provider/AuthProvider'
 import classes from './Nav.module.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button'
+import { FormEvent } from 'react'
 
 const Nav = () => {
   const { isLoggedIn, logout } = useAuth()
-
+  const navigate = useNavigate()
+  const handleClick = (e: FormEvent) => {
+    navigate('/')
+  }
   return (
     <nav className={classes.navbar}>
       <div className={classes.menu}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="103" height="100" viewBox="0 0 103 100" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="103"
+          height="100"
+          viewBox="0 0 103 100"
+          fill="none"
+          onClick={handleClick}
+        >
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
