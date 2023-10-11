@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ContentDTO } from '../types/dto'
 import classes from './Content.module.css'
-import { ClassNames } from '@emotion/react'
+import useContent from '../hook/useContent'
 
 interface IContentprops {
   content: ContentDTO

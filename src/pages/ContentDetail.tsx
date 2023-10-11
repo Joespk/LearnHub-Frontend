@@ -1,17 +1,32 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import useContent from '../hook/useContent'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../provider/AuthProvider'
 import classes from './ContentDetail.module.css'
+import { FormEvent } from 'react'
 
 const ContentDetail = () => {
   const { id } = useParams()
-  const { content, isLoading, error } = useContent(id || '1')
+  const { content, isLoading, error, deleteContent, isSubmitting } = useContent(id || '1')
   const { isLoggedIn, username } = useAuth()
+  const navigate = useNavigate()
 
   if (isLoading) return <h1>Loading...</h1>
   if (error) return <p>{error}</p>
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    console.log()
+
+    try {
+      await deleteContent()
+
+      navigate('/')
+    } catch (err) {
+      console.error('Cannot delete')
+    }
+  }
 
   return (
     <div>
@@ -35,8 +50,20 @@ const ContentDetail = () => {
                         fill="#0D0D0D"
                       />
                     </svg>
-                    Edit
                   </Link>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="103"
+                    height="117"
+                    viewBox="0 0 103 117"
+                    fill="none"
+                    onClick={handleSubmit}
+                  >
+                    <path
+                      d="M43.7741 0C35.7488 0 29.1827 6.56611 29.1827 14.5914H14.5914C6.56611 14.5914 0 21.1575 0 29.1827H102.14C102.14 21.1575 95.5734 14.5914 87.5482 14.5914H72.9568C72.9568 6.56611 66.3907 0 58.3655 0H43.7741ZM14.5914 43.7741V113.959C14.5914 115.564 15.7587 116.731 17.3637 116.731H84.9217C86.5268 116.731 87.6941 115.564 87.6941 113.959V43.7741H73.1027V94.8439C73.1027 98.9295 69.8926 102.14 65.8071 102.14C61.7215 102.14 58.5114 98.9295 58.5114 94.8439V43.7741H43.92V94.8439C43.92 98.9295 40.7099 102.14 36.6243 102.14C32.5387 102.14 29.3286 98.9295 29.3286 94.8439V43.7741H14.7373H14.5914Z"
+                      fill="black"
+                    />
+                  </svg>
                 </>
               ) : (
                 <>

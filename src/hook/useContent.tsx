@@ -48,7 +48,22 @@ const useContent = (id: string) => {
       setIsSubmitting(false)
     }
   }
-  return { content, isLoading, error, newupdateContent, isSubmitting }
+  const deleteContent = async () => {
+    const token = localStorage.getItem('token')
+    setIsSubmitting(true)
+    try {
+      const res = await axios.delete<ContentDTO>(`https://api.learnhub.thanayut.in.th/content/${id}`, {
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      })
+      setUpdate(res.data)
+    } catch (err) {
+      throw err
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return { content, isLoading, error, newupdateContent, isSubmitting, deleteContent }
 }
 
 export default useContent
