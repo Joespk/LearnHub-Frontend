@@ -1,18 +1,15 @@
 .navbar {
-  height: auto;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 0 10px 5px rgb(0 0 0 / 0.1);
-  padding: 20px 16px;
-  box-sizing: border-box;
-
+  background-color: #c70039;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px 48px;
+  width: auto;
 }
 
 .menu {
   display: flex;
   gap: 16px;
   align-items: center;
+  color: #141e46;
 }

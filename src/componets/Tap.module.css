@@ -1,5 +1,19 @@
 .tap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
   width: 100%;
-  height: fit-content;
-  text-align: center;
+  gap: 8px;
+  padding: 96px 128px;
+  background-color: #ff6969;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #141e46;
+  display: block;
+  width: auto;
+  padding: 10px 30px;
 }

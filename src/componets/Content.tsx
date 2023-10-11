@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ContentDTO } from '../types/dto'
 import classes from './Content.module.css'
+import { ClassNames } from '@emotion/react'
 
 interface IContentprops {
   content: ContentDTO
@@ -9,9 +10,9 @@ interface IContentprops {
 const Content = ({ content }: IContentprops) => {
   return (
     <div className={classes.content}>
-      <Link to={`/content/${content.id}`}>
+      <Link to={`/content/${content.id}`} className={classes.font}>
         <img className={classes.thumbnail} src={content.thumbnailUrl} />
-        <p> {content.videoTitle}</p>
+        <h3> {content.videoTitle}</h3>
         <p>{content.creatorName}</p>
         <p> {content.comment}</p>
         <p>{content.postedBy.name}</p>

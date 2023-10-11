@@ -5,9 +5,13 @@
   margin: 5px;
   width: 100%;
   height: auto;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
   border-radius: 5px;
   overflow: hidden;
+}
+
+.font {
+  color: #232d3f;
+  text-decoration: none;
 }
 
 .thumbnail {

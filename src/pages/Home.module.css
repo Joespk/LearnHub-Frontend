@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Prompt:wght@100&family=Roboto:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Prompt:wght@100&family=Roboto:ital,wght@0,700;1,700&display=swap');
 .container {
   display: flex;
   flex-direction: column;
@@ -9,34 +11,17 @@
   display: grid;
   justify-items: stretch;
   align-items: stretch;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 32px;
   margin: 36px 128px;
 }
 
-.postForm {
-  display: flex;
-  flex-direction: column;
-  width: max-content;
-  height: auto;
-  background-color: #c8c8c8;
-  padding: 10px 8px;
-  border-radius: 6px;
-  gap: 5px;
-}
-
-.cretecontentLogin {
-  display: inline;
-  align-self: center;
-  background-color: orange;
-  text-align: center;
-  width: 100%;
-  font-size: 20px;
+body {
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Prompt', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff5e0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  border-radius: 10px;
-  padding: 10px 10px;
-}
-
-.cretecontentLogout {
-  display: none;
 }
