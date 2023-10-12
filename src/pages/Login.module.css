@@ -1,0 +1,55 @@
+.display {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.containerLogin {
+  background-color: #fffcfc;
+  width: 40%;
+  padding: 10px;
+  height: 700px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.lableLogin {
+  margin-bottom: 0;
+  font-size: 70px;
+}
+
+.ptext {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.pLogin {
+  align-self: start;
+  justify-content: space-around;
+  margin-left: 25%;
+  font-size: 40px;
+}
+
+.inputLogin {
+  border-radius: 10px;
+  width: 50%;
+  font-size: 30px;
+}
+
+.summitButton {
+  border-radius: 10px;
+  width: 50%;
+  font-size: 30px;
+  margin-top: 10px;
+}

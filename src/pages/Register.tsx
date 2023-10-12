@@ -1,8 +1,7 @@
 import { FormEvent, useState } from 'react'
-import { useAuth } from '../provider/AuthProvider'
-import classes from './Home.module.css'
 import { useNavigate } from 'react-router-dom'
 import useRegister from '../hook/useRegister'
+import classes from './Login.module.css'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -29,18 +28,39 @@ const Register = () => {
   }
 
   return (
-    <div className={classes.container}>
-      <form className={classes.postForm} onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input type="text" value={Newusername} onChange={(e) => setUsername(e.target.value)} required />
-        <label>Password</label>
-        <input type="text" value={Newpassword} onChange={(e) => setPassword(e.target.value)} required />
-        <label>Name</label>
-        <input type="text" value={Newname} onChange={(e) => setName(e.target.value)} required />
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Registering...' : 'Register'}
-        </button>
-      </form>
+    <div className={classes.display}>
+      <div className={classes.containerLogin}>
+        <form className={classes.formLogin} onSubmit={handleSubmit}>
+          <h1 className={classes.lableLogin}>Register</h1>
+          <label className={classes.pLogin}>Username</label>
+          <input
+            type="text"
+            value={Newusername}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            className={classes.inputLogin}
+          />
+          <label className={classes.pLogin}>Password</label>
+          <input
+            type="password"
+            value={Newpassword}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className={classes.inputLogin}
+          />
+          <label className={classes.pLogin}>Name</label>
+          <input
+            type="text"
+            value={Newname}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className={classes.inputLogin}
+          />
+          <button type="submit" disabled={isSubmitting} className={classes.summitButton}>
+            {isSubmitting ? 'Registering...' : 'Register'}
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
