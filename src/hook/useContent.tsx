@@ -12,7 +12,7 @@ const useContent = (id: string) => {
     const fetchData = async () => {
       setIsLoading(true)
       try {
-        const res = await axios.get<ContentDTO>(`https://api.learnhub.thanayut.in.th/content/${id}`)
+        const res = await axios.get<ContentDTO>(`http://localhost:8080/content/${id}`)
 
         setContentDetail(res.data)
       } catch (err) {
@@ -34,13 +34,9 @@ const useContent = (id: string) => {
 
     setIsSubmitting(true)
     try {
-      const res = await axios.patch<UpdateContentDTO>(
-        `https://api.learnhub.thanayut.in.th/content/${id}`,
-        newContentBody,
-        {
-          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        },
-      )
+      const res = await axios.patch<UpdateContentDTO>(`http://localhost:8080/content/${id}`, newContentBody, {
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      })
       setUpdate(res.data)
     } catch (err) {
       throw err
@@ -52,7 +48,7 @@ const useContent = (id: string) => {
     const token = localStorage.getItem('token')
     setIsSubmitting(true)
     try {
-      const res = await axios.delete<ContentDTO>(`https://api.learnhub.thanayut.in.th/content/${id}`, {
+      const res = await axios.delete<ContentDTO>(`http://localhost:8080/content/${id}`, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       })
       setUpdate(res.data)
@@ -63,7 +59,7 @@ const useContent = (id: string) => {
     }
   }
 
-  return { content, isLoading, error, newupdateContent, isSubmitting, deleteContent }
+  return { content, isLoading, error, newupdateContent, isSubmitting, deleteContent, updateContent }
 }
 
 export default useContent
