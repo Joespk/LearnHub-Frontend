@@ -4,12 +4,12 @@ import axios from 'axios'
 
 const useContents = () => {
   const [contents, setContents] = useState<ContentsDTO | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading] = useState<boolean>(false)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get<ContentsDTO>('https://api.learnhub.thanayut.in.th/content')
+        const res = await axios.get<ContentsDTO>('http://localhost:8080/content')
         setContents(res.data)
       } catch (err) {
         console.error(err)
@@ -30,7 +30,7 @@ const useContents = () => {
 
     setIsSubmitting(true)
     try {
-      const res = await axios.post<ContentDTO>('https://api.learnhub.thanayut.in.th/content', newContentBody, {
+      const res = await axios.post<ContentDTO>('http://localhost:8080/content', newContentBody, {
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       })
 

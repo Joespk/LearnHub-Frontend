@@ -12,7 +12,7 @@ const useRegister = () => {
     }
     setIsSubmitting(true)
     try {
-      const res = await axios.post<RegisterDTO>('https://api.learnhub.thanayut.in.th/user', newUserBody, {
+      const res = await axios.post<RegisterDTO>('http://localhost:8080/user', newUserBody, {
         headers: { 'Content-Type': 'application/json' },
       })
       console.log(res.data)
