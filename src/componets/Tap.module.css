@@ -1,22 +1,61 @@
-.tap {
+.container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  gap: 8px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #ff6969;
-  display: block;
-  box-sizing: border-box;
+  justify-self: center;
+  margin: 0 5%;
+}
+
+.tap {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-self: center;
+  align-items: center;
+}
+
+.image {
+  grid-column-start: 1/2;
+  justify-self: center;
 }
 
 .title {
-  font-size: 48px;
-  margin-left: 20px;
+  justify-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  grid-column-start: 1;
+  font-size: 16px;
   font-weight: 700;
-  color: #141e46;
-  display: block;
-  width: auto;
-  padding: 10px 30px;
+  padding-left: 20%;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.mind {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 146.187%;
+}
+
+.animate {
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg, #40ddb6 0%, #40ddb6 29%, #6b78e5 67%, #37393f 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
