@@ -21,22 +21,14 @@ const Nav = () => {
       <div className={classes.menu}>
         {isLoggedIn ? (
           <>
-            <Button
-              variant="outlined"
-              style={{
-                fontSize: '18px',
-                color: '#141E46',
-                backgroundColor: '#FF6969',
-              }}
-              onClick={logout}
-            >
-              Log out
-            </Button>
+            <h4 onClick={logout} className={classes.link}>
+              Sign out
+            </h4>
           </>
         ) : (
           <>
             <Link to="/Login" className={classes.link}>
-              Login
+              Sign up
             </Link>
             <Link to="/Register" className={classes.link}>
               Register
