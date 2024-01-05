@@ -4,29 +4,19 @@ import useContents from '../hook/useContents'
 import Content from '../componets/Content'
 import { useAuth } from '../provider/AuthProvider'
 import { Link } from 'react-router-dom'
-import Button from '@mui/material/Button'
 
 //Function Homepage
 function Home() {
   const { contents } = useContents()
   const { isLoggedIn } = useAuth()
+
   return (
     <div className={classes.container}>
       <Tap />
       {isLoggedIn ? (
         <>
           <Link to="/CreateContent">
-            <Button
-              style={{
-                borderRadius: 35,
-                backgroundColor: '#008170',
-                padding: '18px 36px',
-                fontSize: '18px',
-                color: '#232D3F',
-              }}
-            >
-              Create Content
-            </Button>
+            <button className={classes.create}>CREATE CONTENT</button>
           </Link>
         </>
       ) : (
