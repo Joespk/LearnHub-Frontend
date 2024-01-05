@@ -4,14 +4,42 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  font-family: 'Roboto Condensed', sans-serif;
   align-items: center;
-  padding: 12px 48px;
-  background-color: #fff7e9;
+  margin: 0 100px;
+}
+
+.logo {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.learn {
+  background: linear-gradient(45deg, #40ddb6, #6b78e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .menu {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
-  color: #141e46;
+}
+
+.link:hover {
+  transform: translate(0, -2px);
+  color: #6b78e5;
+}
+
+.image {
+  width: 30px;
+  height: auto;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
 }

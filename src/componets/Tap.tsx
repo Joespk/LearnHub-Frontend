@@ -1,10 +1,16 @@
 import classes from './Tap.module.css'
+import learnhub from '../assets/content-video_1-removebg-preview.png'
 
 const Tap = () => {
   return (
-    <div className={classes.tap}>
-      <h1 className={classes.title}>LearnHub</h1>
-    </div>
+    <section className={classes.container}>
+      <div className={classes.tap}>
+        <div className={classes.title}>
+          <span>Welcome to LearnHub</span>
+        </div>
+        <img src={learnhub} />
+      </div>
+    </section>
   )
 }
 
