@@ -11,7 +11,7 @@ const Tap = () => {
             <img src={rectangle} />
             &nbsp; Welcome to LearnHub
           </span>
-          <h1>The best video content website.</h1>
+          <h1 className={classes.animate}>The best video content website.</h1>
           <span className={classes.mind}>
             Expand Your Mind, Watch Your World: Learn Hub <br />
             Where Knowledge Meets Vision. Empower Your Journey, <br /> Illuminate Your Path: Learn Hub Unveiling Wisdom,
