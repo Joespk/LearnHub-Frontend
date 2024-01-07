@@ -3,6 +3,7 @@ import { useAuth } from '../provider/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 import classes from './Login.module.css'
 import { Link } from 'react-router-dom'
+import logologin from '../assets/login.svg'
 
 const Login = () => {
   const { login } = useAuth()
@@ -23,6 +24,7 @@ const Login = () => {
     <div className={classes.display}>
       <div className={classes.containerLogin}>
         <form onSubmit={handleSubmit} className={classes.formLogin}>
+          <img src={logologin} />
           <h1 className={classes.lableLogin}>Login</h1>
           <p className={classes.ptext}>
             Doesn't have an account yet? <Link to="/Register">Sign Up</Link>

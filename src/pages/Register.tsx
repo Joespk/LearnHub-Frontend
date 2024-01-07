@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useRegister from '../hook/useRegister'
 import classes from './Login.module.css'
+import registerlogo from '../assets/registerlogo.svg'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -31,6 +32,7 @@ const Register = () => {
     <div className={classes.display}>
       <div className={classes.containerLogin}>
         <form className={classes.formLogin} onSubmit={handleSubmit}>
+          <img src={registerlogo} />
           <h1 className={classes.lableLogin}>Register</h1>
           <label className={classes.pLogin}>Username</label>
           <input
