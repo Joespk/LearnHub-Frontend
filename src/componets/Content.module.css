@@ -3,10 +3,19 @@
   line-height: 1.5;
   flex-direction: column;
   margin: 5px;
+  padding: 5px 15px;
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: space-around;
+  background-color: aliceblue;
+}
+
+.content:hover {
+  transform: translate(0, -2px);
 }
 
 .font {
@@ -19,4 +28,17 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
+}
+
+.post {
+  display: flex;
+  font-size: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
