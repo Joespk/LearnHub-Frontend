@@ -16,19 +16,29 @@ function Home() {
       <Tap />
       {isLoggedIn ? (
         <>
-          <Link to="/CreateContent">
-            <button className={classes.create}>CREATE CONTENT</button>
-          </Link>
+          <div className={classes.buttongap}>
+            <Link to="/CreateContent">
+              <button className={classes.create}>CREATE CONTENT</button>
+            </Link>
+          </div>
+          <div className={classes.feedContainer}>
+            {contents &&
+              contents.data.map((content) => {
+                return <Content key={content.id} content={content} />
+              })}
+          </div>
         </>
       ) : (
-        <></>
+        <>
+          <div className={classes.feedContainer}>
+            {contents &&
+              contents.data.map((content) => {
+                return <Content key={content.id} content={content} />
+              })}
+          </div>
+        </>
       )}
-      <div className={classes.feedContainer}>
-        {contents &&
-          contents.data.map((content) => {
-            return <Content key={content.id} content={content} />
-          })}
-      </div>
+
       <Footer />
     </div>
   )
