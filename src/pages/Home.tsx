@@ -4,6 +4,7 @@ import useContents from '../hook/useContents'
 import Content from '../componets/Content'
 import { useAuth } from '../provider/AuthProvider'
 import { Link } from 'react-router-dom'
+import Footer from '../componets/Footer'
 
 //Function Homepage
 function Home() {
@@ -28,6 +29,7 @@ function Home() {
             return <Content key={content.id} content={content} />
           })}
       </div>
+      <Footer />
     </div>
   )
 }
