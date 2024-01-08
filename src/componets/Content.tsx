@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ContentDTO } from '../types/dto'
 import classes from './Content.module.css'
 import Rating from '@mui/material/Rating'
-import { Typography, styled } from '@mui/material'
+import { styled } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
