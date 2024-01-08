@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useRegister from '../hook/useRegister'
-import classes from './Login.module.css'
+import classes from './Register.module.css'
 import registerlogo from '../assets/registerlogo.svg'
 
 const Register = () => {

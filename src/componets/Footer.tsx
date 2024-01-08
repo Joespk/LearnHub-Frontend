@@ -31,7 +31,7 @@ const Footer = () => {
               <span className={classes.join}>Subscribe our newsletter to get more contact</span>
               <div className={classes.email}>
                 <input type="email" className={classes.text} placeholder="Enter your email" />
-                <button>
+                <button className={classes.button}>
                   <img src={arrow} />
                 </button>
               </div>
