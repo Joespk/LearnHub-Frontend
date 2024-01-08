@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../provider/AuthProvider'
 import classes from './ContentDetail.module.css'
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 import { Rating, Typography, styled } from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
@@ -23,14 +23,17 @@ const StyledRating = styled(Rating)({
 
 const ContentDetail = () => {
   const { id } = useParams()
-  const { content, isLoading, error, deleteContent, isSubmitting } = useContent(id || '1')
+  const { content, isLoading, error, deleteContent, isSubmitting, newupdateContent } = useContent(id || '1')
   const { isLoggedIn, username } = useAuth()
+  const [Newcomment, setNewcomment] = useState<string>('')
+  const [Newrating, setNewrating] = useState<number>(0)
+  const [isFormVisible, setIsFormVisible] = useState<boolean>(false)
   const navigate = useNavigate()
 
   if (isLoading) return <h1>Loading...</h1>
   if (error) return <p>{error}</p>
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handledelete = async (e: FormEvent) => {
     e.preventDefault()
     console.log()
 
@@ -41,6 +44,27 @@ const ContentDetail = () => {
     } catch (err) {
       console.error('Cannot delete')
     }
+  }
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    console.log(Newcomment, Newrating)
+
+    try {
+      await newupdateContent(Newcomment, Newrating)
+
+      setNewcomment('')
+      setNewrating(0)
+
+      navigate('/')
+    } catch (err) {
+      console.error('Cannot edit content')
+    }
+  }
+
+  const handleedit = (e: FormEvent) => {
+    e.preventDefault()
+    setIsFormVisible(!isFormVisible)
   }
 
   return (
@@ -70,10 +94,8 @@ const ContentDetail = () => {
               {username === content.postedBy.username ? (
                 <>
                   <div className={classes.icon}>
-                    <Link to={`/edit/${content.id}`} className={classes.button}>
-                      <img src={edit} />
-                    </Link>
-                    <button className={classes.button} onClick={handleSubmit}>
+                    <img src={edit} onClick={handleedit} className={classes.button} />
+                    <button className={classes.button} onClick={handledelete}>
                       <img src={deletelogo} />
                     </button>
 
@@ -88,6 +110,30 @@ const ContentDetail = () => {
                     <img src={backhome} />
                   </Link>
                 </>
+              )}
+              {isFormVisible && (
+                <form onSubmit={handleSubmit} className={classes.formEdit}>
+                  <label className={classes.ptext}>Comment</label>
+                  <input
+                    type="text"
+                    value={Newcomment}
+                    onChange={(e) => setNewcomment(e.target.value)}
+                    required
+                    className={classes.labelEdit}
+                  />
+                  <label className={classes.ptext}>Rating</label>
+                  <Typography component="legend"></Typography>
+                  <StyledRating
+                    name="simple-controlled"
+                    value={Newrating}
+                    onChange={(e, rating) => setNewrating(rating !== null ? rating : 0)}
+                    icon={<FavoriteIcon fontSize="inherit" />}
+                    emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                  />
+                  <button type="submit" disabled={isSubmitting} className={classes.summitButton}>
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                  </button>
+                </form>
               )}
             </div>
           </div>
