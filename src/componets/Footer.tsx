@@ -13,22 +13,22 @@ const Footer = () => {
                 148/80-81 Soi Khuborn 27 Yak 52 , Kruborn road Tharaeng Sub-district , Bangkhen District , Bangkok ,
                 10220{' '}
               </span>
-              <span>095-554-1629</span>
+              <span className={classes.span}>095-554-1629</span>
             </div>
           </div>
           <div className={classes.page}>
             <h4>Page</h4>
             <div className={classes.menu}>
-              <a>Home</a>
-              <a>Sign up</a>
-              <a>Register</a>
+              <a className={classes.a}>Home</a>
+              <a className={classes.a}>Sign up</a>
+              <a className={classes.a}>Register</a>
             </div>
           </div>
 
           <div className={classes.contact}>
             <h4>Join Newsletter</h4>
             <div className={classes.menu}>
-              <span className={classes.join}>Subscribe our newsletter to get more contact</span>
+              <span className={classes.span}>Subscribe our newsletter to get more contact</span>
               <div className={classes.email}>
                 <input type="email" className={classes.text} placeholder="Enter your email" />
                 <button className={classes.button}>
