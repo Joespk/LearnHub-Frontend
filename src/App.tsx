@@ -6,10 +6,12 @@ import CreateContent from './pages/CreateContent'
 import ContentDetail from './pages/ContentDetail'
 
 import Register from './pages/Register'
+import Header from './componets/Header'
 
 function App() {
   return (
     <div>
+      <Header />
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
