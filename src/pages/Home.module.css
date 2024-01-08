@@ -2,6 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: linear-gradient(60deg, #40ddb6 0%, #40ddb6 29%, #6b78e5 67%, #37393f 100%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s infinite alternate-reverse;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 .feedContainer {

@@ -6,7 +6,11 @@ body {
   justify-content: space-between;
   font-family: 'Roboto Condensed', sans-serif;
   align-items: center;
-  margin: 0 100px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+  padding-bottom: 5px;
 }
 
 .logo {

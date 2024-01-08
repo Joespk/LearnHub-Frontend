@@ -25,17 +25,19 @@ const Content = ({ content }: IContentprops) => {
       <Link to={`/content/${content.id}`} className={classes.font}>
         <img className={classes.thumbnail} src={content.thumbnailUrl} />
         <h3> {content.videoTitle}</h3>
-        <p>{content.creatorName}</p>
-        <p> {content.comment}</p>
-        <p>{content.postedBy.name}</p>
-        <Typography component="legend"></Typography>
-        <StyledRating
-          name="read-only"
-          value={content.rating}
-          readOnly
-          icon={<FavoriteIcon fontSize="inherit" />}
-          emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
-        />
+        <h5>{content.creatorName}</h5>
+        <h5> {content.comment}</h5>
+        <br />
+        <p className={classes.post}>
+          {content.postedBy.name}
+          <StyledRating
+            name="read-only"
+            value={content.rating}
+            readOnly
+            icon={<FavoriteIcon fontSize="inherit" />}
+            emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+          />
+        </p>
       </Link>
     </div>
   )

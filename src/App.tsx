@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import CreateContent from './pages/CreateContent'
 import ContentDetail from './pages/ContentDetail'
-
 import Register from './pages/Register'
 import Header from './componets/Header'
 
