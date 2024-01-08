@@ -123,7 +123,7 @@
   flex-shrink: 0;
 }
 
-p {
+.p {
   color: var(--neutral-07100, white);
   /* Caption 2 */
   font-family: 'Poppins';
