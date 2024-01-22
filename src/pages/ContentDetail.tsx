@@ -91,7 +91,7 @@ const ContentDetail = () => {
 
               <span>PostedBy:&nbsp;{content.postedBy.username}</span>
               <span>Date:&nbsp;{content.updatedAt}</span>
-              {username === content.postedBy.username ? (
+              {username === content.postedBy.username && isLoggedIn ? (
                 <>
                   <div className={classes.icon}>
                     <img src={edit} onClick={handleedit} className={classes.button} />
