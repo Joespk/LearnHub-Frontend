@@ -73,7 +73,7 @@ const ContentDetail = () => {
         <>
           <div>
             <div className={classes.detail}>
-              <ReactPlayer url={content.videoUrl} />
+              <ReactPlayer url={content.videoUrl} className={classes.video} />
               <h2>{content.videoTitle}</h2>
               <span className={classes.text}>{content.creatorName}</span>
               <h3 className={classes.text}>Detail</h3>
